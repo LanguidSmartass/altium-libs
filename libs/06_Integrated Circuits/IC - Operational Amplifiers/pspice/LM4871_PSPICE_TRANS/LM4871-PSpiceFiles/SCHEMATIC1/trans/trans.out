@@ -1,0 +1,132 @@
+
+**** 02/08/13 17:11:41 ******* PSpice 16.0.0 (July 2006) ****** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\a0866312\Desktop\Modeling\LM4871\Active_Work\PSPICE\LM4871_PSPICE_AIO\LM4871-PSpiceFiles\
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "trans.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../lm4871.lib" 
+* From [PSPICE NETLIST] section of C:\Cadence\SPB_16.0\tools\PSpice\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 20m 0 20u 
+.PROBE V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LM4871
+R_R1         N18784 N15940  20k  
+R_R4         N15940 N17696  20k  
+C_C1         0 N19342  1u  
+V_V3         N17089 0  
++SIN 0 1 1k 0 0 0
+X_U1         N15940 N19342 VDD 0 N144210 N19342 N17696 N20434 LM4871
+V_V2         VDD 0 5Vdc
+C_C2         N18784 N17089  1u  
+V_V1         N144210 0 0Vdc
+R_R7         N20434 N17696  3  
+
+**** RESUMING trans.cir ****
+.END
+
+WARNING -- Library file C:\Users\a0866312\Desktop\Modeling\LM4871\Active_Work\PSPICE\LM4871_PSPICE_AIO\lm4871.lib has changed since index file lm4871.ind was created.
+WARNING -- The timestamp changed from Fri Feb 08 17:08:19 2013 to Fri Feb 08 17:09:21 2013.
+Making new index file lm4871.ind for library file lm4871.lib
+Index has 9 entries from 1 file(s).
+
+**** 02/08/13 17:11:41 ******* PSpice 16.0.0 (July 2006) ****** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\a0866312\Desktop\Modeling\LM4871\Active_Work\PSPICE\LM4871_PSPICE_AIO\LM4871-PSpiceFiles\
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VDD)    5.0000  (N15940)    2.5000 (N17089)    0.0000 (N17696)    2.5000     
+
+(N18784)    2.5000 (N19342)    2.5000 (N20434)    2.5000 (N144210)    0.0000    
+
+(X_U1.11)    2.5000                   (X_U1.12)    2.5000                       
+
+(X_U1.13)    2.5000                   (X_U1.14)    2.5000                       
+
+(X_U1.15)    2.5000                   (X_U1.16)    2.5000                       
+
+(X_U1.17)    2.5005                   (X_U1.18)    2.5005                       
+
+(X_U1.20)    2.5000                   (X_U1.21)    2.5000                       
+
+(X_U1.22)    2.5000                   (X_U1.23)    2.5000                       
+
+(X_U1.24)    2.5005                   (X_U1.25)    2.5005                       
+
+(X_U1.VDDx)    5.0000                 (X_U1.XU7.1)    2.5005                    
+
+(X_U1.XU7.2)    2.5000                (X_U1.VIMONN)-5.369E-06                   
+
+(X_U1.VIMONP) 5.369E-06               (X_U1.XU4.OUTX)    2.5000                 
+
+(X_U1.XU9.OUTX)    2.5000             (X_U1.XU3.VDD_CLP)    2.5000              
+
+(X_U1.XU3.VSS_CLP)   -2.5000          (X_U1.XU5.VDD_CLP)    2.5000              
+
+(X_U1.XU5.VSS_CLP)   -2.5000          
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V3         0.000E+00
+    V_V2        -6.500E-03
+    V_V1         0.000E+00
+    X_U1.V6      0.000E+00
+    X_U1.V5      0.000E+00
+    X_U1.Vos     0.000E+00
+    X_U1.XU6.VSENSE   5.369E-06
+    X_U1.XU2.VSENSE  -5.369E-06
+
+    TOTAL POWER DISSIPATION   3.25E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 02/08/13 17:11:41 ******* PSpice 16.0.0 (July 2006) ****** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\a0866312\Desktop\Modeling\LM4871\Active_Work\PSPICE\LM4871_PSPICE_AIO\LM4871-PSpiceFiles\
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .14
+

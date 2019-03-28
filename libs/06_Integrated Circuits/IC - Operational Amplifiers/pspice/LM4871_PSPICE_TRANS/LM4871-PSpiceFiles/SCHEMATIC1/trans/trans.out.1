@@ -1,0 +1,136 @@
+
+**** 02/08/13 17:05:16 ******* PSpice 16.0.0 (July 2006) ****** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\a0866312\Desktop\Modeling\LM4871\Active_Work\PSPICE\LM4871_PSPICE_AIO\LM4871-PSpiceFiles\
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "trans.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../lm4871.lib" 
+* From [PSPICE NETLIST] section of C:\Cadence\SPB_16.0\tools\PSpice\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 20m 0 20u 
+.PROBE V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LM4871
+R_R1         N18784 N15940  20k  
+R_R4         N15940 N17696  20k  
+C_C1         0 N19342  1u  
+V_V3         N17089 0  
++SIN 0 1 1k 0 0 0
+X_U1         N15940 N19342 VDD 0 N144210 N19342 N17696 N20434 LM4871
+V_V2         VDD 0 5Vdc
+C_C2         N18784 N17089  1u  
+V_V1         N144210 0 0Vdc
+R_R7         N20434 N17696  3  
+
+**** RESUMING trans.cir ****
+.END
+
+WARNING -- Library file C:\Users\a0866312\Desktop\Modeling\LM4871\Active_Work\PSPICE\LM4871_PSPICE_AIO\lm4871.lib has changed since index file lm4871.ind was created.
+WARNING -- The timestamp changed from Fri Feb 08 17:04:31 2013 to Fri Feb 08 17:05:12 2013.
+Making new index file lm4871.ind for library file lm4871.lib
+Index has 9 entries from 1 file(s).
+
+ERROR -- Convergence problem in transient bias point calculation
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VDD) 510.9E-06  (N15940) 146.8E-09 (N17089)    0.0000 (N17696) 147.7E-09     
+
+(N18784) 146.8E-09 (N19342) 10.44E-09 (N20434) 147.7E-09 (N144210)    0.0000    
+
+(X_U1.11) 10.44E-09                   (X_U1.12) 1.067E-12                       
+
+(X_U1.13) 10.44E-09                   (X_U1.14) 73.86E-09                       
+
+(X_U1.15) 73.86E-09                   (X_U1.16) 10.23E-09                       
+
+(X_U1.17) 10.46E-09                   (X_U1.18) 10.44E-09                       
+
+(X_U1.20) 147.7E-09                   (X_U1.21) 147.7E-09                       
+
+(X_U1.22) 969.0E-15                   (X_U1.23) 10.44E-09                       
+
+(X_U1.24) 198.7E-09                   (X_U1.25) 10.44E-09                       
+
+(X_U1.VDDx) 204.4E-06                 (X_U1.XU7.1) 10.44E-09                    
+
+(X_U1.XU7.2) 10.44E-09                (X_U1.VIMONN) 93.12E-18                   
+
+(X_U1.VIMONP) 100.2E-18               (X_U1.XU4.OUTX) 152.3E-09                 
+
+(X_U1.XU9.OUTX) 152.7E-09             (X_U1.XU3.VDD_CLP) 20.88E-09              
+
+(X_U1.XU3.VSS_CLP)-1.067E-12          
+
+
+  These voltages failed to converge:
+
+    V(N18784)                 =   812.49mV  \   146.80nV
+    V(N15940)                 =   812.49mV  \   146.80nV
+    V(N17696)                 =   811.24mV  \   147.71nV
+    V(N19342)                 =     1.000V  \    10.44nV
+    V(N20434)                 =     1.226V  \   147.71nV
+    V(X_U1.13)                =     1.000V  \    10.44nV
+    V(X_U1.15)                =     1.025V  \    73.86nV
+    V(X_U1.14)                =     1.025V  \    73.86nV
+    V(X_U1.24)                =   812.49mV  \   198.71nV
+    V(X_U1.12)                =     1.240V  \    1.067pV
+    V(X_U1.VDDx)              =     2.000V  \   204.38uV
+    V(X_U1.11)                =     1.240V  \    10.44nV
+    V(X_U1.22)                =     1.226V  \   969.02fV
+    V(X_U1.16)                =    -7.038V  \    10.23nV
+    V(X_U1.17)                =    11.20mV  \    10.46nV
+    V(X_U1.18)                =    10.44mV  \    10.44nV
+    V(X_U1.20)                =     1.226V  \   147.71nV
+    V(X_U1.VIMONP)            =   138.18mV  \ 100.20e-18V
+    V(X_U1.21)                =   811.24mV  \   147.71nV
+    V(X_U1.VIMONN)            =  -138.19mV  \ 93.12e-18V
+    V(X_U1.XU9.OUTX)          =     1.364V  \   152.67nV
+    V(X_U1.XU4.OUTX)          =   673.05mV  \   152.31nV
+    V(X_U1.23)                =   811.24mV  \    10.44nV
+    V(X_U1.XU3.VDD_CLP)       =     1.000V  \    20.88nV
+    V(X_U1.XU3.VSS_CLP)       =    -1.000V  \   -1.067pV
+    V(X_U1.25)                =     1.000V  \    10.44nV
+    V(X_U1.XU7.1)             =     1.000V  \    10.44nV
+    V(X_U1.XU7.2)             =     1.000V  \    10.44nV
+
+  These supply currents failed to converge:
+
+    I(X_U1.ECS1)              =  -138.19mA  \   865.78fA
+    I(X_U1.XU3.ECLAMP)        =   138.19mA  \  -911.24fA
+    I(X_U1.XU11.EVCM)         =   138.19mA  \  -865.78fA
+    I(X_U1.XU7.L1)            =    20.44nA  \    2.088pA
+    I(V_V2)                   =   -6.500mA  \  -713.15nA
+    I(X_U1.XU6.VSENSE)        =   138.18mA  \   980.57fA
+    I(X_U1.XU2.VSENSE)        =  -138.19mA  \   911.24fA
+
+  These devices failed to converge:
+    X_U1.XU3.ECLAMP X_U1.XU13.ECLAMPP X_U1.XU13.ECLAMPM 
+
+Try running with .OPTION STEPGMIN
+
+**** Interrupt ****

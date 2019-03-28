@@ -1,0 +1,66 @@
+(ExpressProject "LME49721"
+  (ProjectVersion "19981106")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File ".\lme49721.olb"
+        (Type "Schematic Library")))
+    (NoModify)
+    (File ".\lme49721.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE"))
+  (Folder "Outputs"
+    (File ".\lme49721-pspicefiles\schematic1\schematic1.net"
+      (Type "Report")))
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles"
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\lme49721-pspicefiles\schematic1\ac.sim"
+        (DisplayName "SCHEMATIC1-AC")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\lme49721-pspicefiles\schematic1\tran.sim"
+        (DisplayName "SCHEMATIC1-TRAN")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\lme49721-pspicefiles\schematic1\dc sweep.sim"
+        (DisplayName "SCHEMATIC1-DC SWEEP")
+        (Type "PSpice Profile"))
+      (ActiveProfile ".\lme49721-pspicefiles\schematic1\tran.sim"))
+    (Folder "Stimulus Files")
+    (Folder "Include Files")
+    (Folder "Model Libraries"
+      (File ".\lme49721.lib"
+        (DisplayName ".\lme49721.lib")
+        (Type "PSpiceLibrary"))
+      (Sort User)))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (PartMRUSelector
+    (LME49721
+      (FullPartName "LME49721.Normal")
+      (LibraryName
+         "C:\USERS\A0867324\DOCUMENTS\DOCS-PROJECTS\SPICE MODELS\SVA_MODELS\LME49721\LME49721_PSPICE_AIO\LME49721.OLB")
+      (DeviceIndex "0")))
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources"
+         "C:\Users\a0867324\Documents\Docs-Projects\SPICE Models\SVA_Models\LME49721\LME49721_PSPICE_AIO\lme49721.dsn")
+      (Path "Design Resources"
+         "C:\Users\a0867324\Documents\Docs-Projects\SPICE Models\SVA_Models\LME49721\LME49721_PSPICE_AIO\lme49721.dsn"
+         "SCHEMATIC1")
+      (Path "Design Resources" "Library")
+      (Path "Outputs")
+      (Path "PSpice Resources")
+      (Path "PSpice Resources" "Simulation Profiles")
+      (Select "PSpice Resources" "Simulation Profiles"
+         ".\lme49721-pspicefiles\schematic1\tran.sim"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 0 449 0 428"))
+      (Tab 0)))
+  (MPSSessionName "a0867324"))
