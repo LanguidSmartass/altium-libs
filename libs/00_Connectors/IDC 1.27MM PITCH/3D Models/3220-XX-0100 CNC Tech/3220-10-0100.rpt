@@ -1,0 +1,64 @@
+*****************************************************************
+      SolidWorks Corporation - IGES Processor Status Report
+*****************************************************************
+=================================================================
+General Information
+=================================================================
+Sending System Product I.D.  : BOX-127H54_ASM
+Receiving System Product I.D.: BOX-127H54_ASM
+File Name                    : 3220-10-0100.igs
+Sending System               : Pro/ENGINEER by Parametric Technology Corporation
+Preprocessor Version         : 2001280
+File Creation Date           : 160429.144617
+Model Creation Date          : 160429.144617
+Units                        : MM
+Model Space Scale            : 1
+Author                       : Administrator
+Organization                 : Unknown
+
+
+=================================================================
+Entity Processing Information
+=================================================================
+
+
+=================================================================
+Precision analysis of IGES file:
+=================================================================
+  Most prevalent number of significant digits:               1
+  Highest number of significant digits:                     13
+  Average number of significant digits:                2.74918
+  Maximum distance to origin:                          9.51195
+  Minimum distance to origin:                                0
+  Effective number of significant digits:                   13
+
+
+=================================================================
+Entity Summary
+=================================================================
+-----------------------------------------------------------------
+Type Name                                         Count Converted
+---- ----                                         ----- ---------
+102  Composite curve                                184       184
+110  Line                                           792       792
+128  Rational B-spline surface                      183       183
+142  Curve on a parametric surface                  184       184
+144  Trimmed parametric surface                     183       183
+314  Color definition                                84        84
+402  Associativity instance                           2         2
+406  Property                                         2         2
+_________________________________________________________________
+
+
+=================================================================
+Result Summary
+=================================================================
+SolidWorks Feature Type                Count
+-----------------------                -----
+Solid feature(s)                       11
+Surface feature(s)                     0
+Curve/Sketch feature(s)                0
+--------------------------------------------
+Start time: Monday, September 04, 2017 11:36:50
+Finish time: Monday, September 04, 2017 11:36:57
+Processing time: 0 days, 00 hours, 00 mins, 07 secs

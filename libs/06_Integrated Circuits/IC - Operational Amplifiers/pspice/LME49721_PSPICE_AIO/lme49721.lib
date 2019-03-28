@@ -1,0 +1,351 @@
+* LME49721
+*****************************************************************************
+* (C) Copyright 2011 Texas Instruments Incorporated. All rights reserved.                                            
+*****************************************************************************
+** This model is designed as an aid for customers of Texas Instruments.
+** TI and its licensors and suppliers make no warranties, either expressed
+** or implied, with respect to this model, including the warranties of 
+** merchantability or fitness for a particular purpose.  The model is
+** provided solely on an "as is" basis.  The entire risk as to its quality
+** and performance is with the customer.
+*****************************************************************************
+*
+** Released by: WEBENCH Design Center, Texas Instruments Inc.
+* Part: LME49721
+* Date: 03/09/2012
+* Model Type: All In One
+* Simulator: Pspice
+* Simulator Version: Pspice 16.2.0.p001
+* EVM Order Number: N/A 
+* EVM Users Guide: N/A
+* Datasheet: SNAS371B - September 2007 - Revised April 2010
+*
+* Model Version: 1.0
+*
+*****************************************************************************
+*
+* Updates:
+*
+* Version 1.0 : Release to Web
+*
+*****************************************************************************
+* Notes: 
+* The LME49721 Macro Model represents the following parameters 
+* for split-supply operation (+/-2.5V) under the conditions
+* specified in the data sheet:
+* 1. BW in G=-1                                 7. Input offset voltage
+* 2. Input-referred voltage & current noise     8. Input bias current
+* 3. Quiescent current                          9. Slew rate
+* 4. Output swing                               10. Input common-mode range
+* 5. Max output current                         11. PSRR & CMRR
+* 6. Short circuit output current
+
+* The LME49721 model does not accurately represent
+* distortion as shown in the device data sheet.
+*
+*****************************************************************************
+
+* source LME49721
+*$
+.SUBCKT LME49721 IN+ IN- VCC VEE OUT
+X_U23         VIMON GND_FLOAT N5638284 VCC_CLP VCVS_LIMIT PARAMS:  GAIN=0.0077
++  VPOS=2.5 VNEG=-2.5
+X_U_R104         V_P0 GND_FLOAT R_NOISELESS PARAMS:  ROHMS=1e6
+E_E_VCVS6A         N5639922 GND_FLOAT VEE GND_FLOAT 1
+X_S1    GND_FLOAT SC+ N5635038 N5636676 LME49721_S1 
+X_H1    N5639276 OUT VIMON GND_FLOAT LME49721_H1 
+R_Rcc2         GND_FLOAT VEE_CLP_ACTIVE  1k TC=0,0 
+V_Vos         IN+_CMRR N5634788 0.335mVdc
+R_R6         N5633580 OVER_CLAMP  0.01 TC=0,0 
+G_G8         GND_FLOAT CLAW_CLAMP V_P1 GND_FLOAT 1e-3
+R_R29         OVER_CLAMP CL1  1 TC=0,0 
+X_U26         IN_STAGE_IN+ IN_STAGE_IN- IN_STAGE_OUT GND_FLOAT VCCS_LIMIT
++  PARAMS:  GAIN=-100E-6 IPOS=.5 INEG=-.5
+E_E_VCVS3         OSTG1 GND_FLOAT CL__CLAMP GND_FLOAT 1
+V_Vor_1         N5640074 N5639516 0.1Vdc
+R_R34         VCLP N5636222  1k TC=0,0 
+R_Roclmp         GND_FLOAT CL1  1k TC=0,0 
+X_S8    N5633540 GND_FLOAT VIMON N5635048 LME49721_S8 
+R_R70A         N5638720 IN_STAGE_IN-  1 TC=0,0 
+X_U24         GND_FLOAT VIMON VEE_CLP N5634546 VCVS_LIMIT PARAMS:  GAIN=0.0077
++  VPOS=2.5 VNEG=-2.5
+E_E28         N5636442 0 VEE 0 1
+X_U19         VCC_CLP OUT N5635790 GND_FLOAT VCVS_LIMIT PARAMS:  GAIN=100
++  VPOS=6000 VNEG=-6000
+E_E_VCVS10         N5635212 GND_FLOAT OSTG1 N5633326 -1
+X_S3    GND_FLOAT OL+ N5633544 N5633580 LME49721_S3 
+X_U_In11         N5633172 N5633970 inoise
+C_C22         GND_FLOAT CL1  10p  TC=0,0 
+X_U4         GND_FLOAT IN_STAGE_OUT V_P0 GND_FLOAT VCCS_LIMIT PARAMS: 
++  GAIN=0.01 IPOS=0.115 INEG=-0.115
+G_Gsinking         VEE GND_FLOAT N5634998 GND_FLOAT 0.001
+X_U_R107         V_P1 GND_FLOAT R_NOISELESS PARAMS:  ROHMS=1E6
+R_R71         N5633326 N5639276  46 TC=0,0 
+X_S12    SC- GND_FLOAT IN+_U23 N5637616 LME49721_S12 
+X_U27         N5633848 GND_FLOAT N5635138 N5638632 VCVS_LIMIT PARAMS:  GAIN=1
++  VPOS=0.1 VNEG=-0.1
+R_R19         N5635038 SC+  1 TC=0,0 
+R_R9         N5633092 N5633326  100e6 TC=0,0 
+R_Rov2         GND_FLOAT OL-  1k TC=0,0 
+R_R1         VCC_CLP GND_FLOAT  100k TC=0,0 
+R_R_VCLP         GND_FLOAT OSTG1  1k TC=0,0 
+C_C21         OL- GND_FLOAT  10p  TC=0,0 
+L_LPSR         N5633848 N5638590  16mH  
+R_R13         OSTG1 VCLP  1 TC=0,0 
+V_V6         GND_FLOAT V_S14 20Vdc
+X_S11    GND_FLOAT SC+ N5640074 IN+_U22 LME49721_S11 
+R_R18         IN- N5635138  1 TC=0,0 
+V_Vor_4         N5637616 N5637598 0.1Vdc
+X_U_R103         IN_STAGE_OUT GND_FLOAT R_NOISELESS PARAMS:  ROHMS=1E6
+X_U3         IN+_U22 VSENSE N5633544 GND_FLOAT VCVS_LIMIT PARAMS:  GAIN=100
++  VPOS=6000 VNEG=-6000
+X_S6    VEE_CLP_ACTIVE GND_FLOAT N5635906 N5635830 LME49721_S6 
+R_R7         N5633544 OL+  1 TC=0,0 
+R_R8         N5635212 N5633092  5e5 TC=0,0 
+R_R_Vimon         VIMON GND_FLOAT  1k TC=0,0 
+X_U_Vn11         IN+_CMRR N5633970 vnoise PARAMS: 
+R_R23         N5634998 GND_FLOAT  10e3 TC=0,0 
+R_Rcc1         GND_FLOAT VCC_CLP_ACTIVE  1k TC=0,0 
+C_C13         CLAW_CLAMP GND_FLOAT  1f  TC=0,0 
+I_IS2         VCC N5633970 DC 10fA  
+X_U21         N5636986 VIMON N5636266 GND_FLOAT VCVS_LIMIT PARAMS:  GAIN=100
++  VPOS=6000 VNEG=-6000
+R_R12         N5633564 OL-  1 TC=0,0 
+R_R70         IN_STAGE_IN+ N5633730  1 TC=0,0 
+X_U_Rinp         N5634788 GND_FLOAT R_NOISELESS PARAMS:  ROHMS=1e6
+X_U_R105         VSENSE GND_FLOAT R_NOISELESS PARAMS:  ROHMS=1E6
+C_C6         0 N5634850  1e-6  TC=0,0 
+R_R4         N5636676 CL__CLAMP  0.01 TC=0,0 
+R_Rsc2         GND_FLOAT SC-  1k TC=0,0 
+C_C4         CL__CLAMP GND_FLOAT  1f  TC=0,0 
+E_E34         GND_FLOAT 0 N5634850 0 1
+R_Rov1         GND_FLOAT OL+  1k TC=0,0 
+C_C17         GND_FLOAT SC+  10p  TC=0,0 
+G_G_VCCS7         GND_FLOAT N5635244 IN+_CMRR GND_FLOAT -22m
+V_Vor_3         N5636222 IN+_U23 10Vdc
+C_C19         SC- GND_FLOAT  10p  TC=0,0 
+E_E_VCVS4         N5636314 GND_FLOAT N5633970 GND_FLOAT 1
+R_R5         N5635906 CLAW_CLAMP  0.01 TC=0,0 
+R_R21         GND_FLOAT N5635048  10e3 TC=0,0 
+X_S7    N5633540 GND_FLOAT VIMON N5634998 LME49721_S7 
+G_G_VCCS11         N5633848 GND_FLOAT VCC VEE 7u
+R_Rsc1         GND_FLOAT SC+  1k TC=0,0 
+C_C11         V_P1 GND_FLOAT  10f  TC=0,0 
+E_E_VCVS6         N5639736 GND_FLOAT VCC GND_FLOAT 1
+X_U22         N5636456 VIMON N5635038 GND_FLOAT VCVS_LIMIT PARAMS:  GAIN=100
++  VPOS=6000 VNEG=-6000
+L_LCM         N5635244 N5635092  80uH  
+C_CinpCM         N5634788 GND_FLOAT  600f  TC=0,0 
+V_V9         N5639736 N5633106 0.8Vdc
+R_R22A         N5633428 IN_STAGE_IN-  10 TC=0,0 
+X_S4    OL- GND_FLOAT N5633580 N5633564 LME49721_S4 
+I_IS1         VCC VEE DC 2.13mAdc  
+C_C20         GND_FLOAT OL+  10p  TC=0,0 
+R_R20         IN+ N5634788  1 TC=0,0 
+X_U_R102         N5634850 N5636442 R_NOISELESS PARAMS:  ROHMS=1E6
+X_S10    CL1 GND_FLOAT V_S13 V_P0 LME49721_S10 
+X_S5    GND_FLOAT VCC_CLP_ACTIVE N5635790 N5635906 LME49721_S5 
+R_R25         N5636266 SC-  1 TC=0,0 
+C_C16         VEE_CLP_ACTIVE GND_FLOAT  10p  TC=0,0 
+R_RCM         GND_FLOAT N5635092  1 TC=0,0 
+X_U1         IN+_U23 VSENSE N5633564 GND_FLOAT VCVS_LIMIT PARAMS:  GAIN=100
++  VPOS=6000 VNEG=-6000
+G_G9         GND_FLOAT CL__CLAMP CLAW_CLAMP GND_FLOAT 1e-3
+X_U2         N5633730 N5633106 diode_ideal PARAMS:
+V_V3         N5636456 GND_FLOAT 100Vdc
+R_RPSR         GND_FLOAT N5638590  1 TC=0,0 
+X_S2    SC- GND_FLOAT N5636676 N5636266 LME49721_S2 
+R_R2         VEE_CLP GND_FLOAT  100k TC=0,0 
+R_R14         N5635790 VCC_CLP_ACTIVE  1 TC=0,0 
+E_E_VCVSCM         N5638632 N5633172 N5635244 GND_FLOAT 1m
+V_Vor_2         IN+_U22 N5639816 10Vdc
+E_E29         N5634836 0 VCC 0 1
+R_R26         N5633540 VIMON  10 TC=0,0 
+R_R22         N5636314 IN_STAGE_IN+  10 TC=0,0 
+R_R16         N5635830 VEE_CLP_ACTIVE  1 TC=0,0 
+X_U2A         N5639060 N5638720 diode_ideal PARAMS:
+V_V2         GND_FLOAT N5636986 100Vdc
+G_G_VCCS10         GND_FLOAT V_P1 VSENSE GND_FLOAT 1e-6
+X_S9    GND_FLOAT CL1 V_P0 V_S14 LME49721_S9 
+E_E12         N5633326 GND_FLOAT GND_FLOAT N5633092 20e6
+R_R28         CLAW_CLAMP GND_FLOAT  1k TC=0,0 
+R_R36         VCLP N5639516  0.1 TC=0,0 
+C_Cdiff         N5635138 N5634788  0.1p  TC=0,0 
+R_R15         0 GND_FLOAT  100E6 TC=0,0 
+C_C9         N5633540 GND_FLOAT  10e-12  TC=0,0 
+V_V8         N5634546 VEE 0.03Vdc
+V_V9A         N5639060 N5639922 0.8Vdc
+V_V7         VCC N5638284 0.03Vdc
+X_U_R101         N5634836 N5634850 R_NOISELESS PARAMS:  ROHMS=1E6
+I_IS3         N5633172 VEE DC 70fA  
+E_E_VCVS4A         N5633428 GND_FLOAT N5633172 GND_FLOAT 1
+C_C12         GND_FLOAT VCC_CLP_ACTIVE  10p  TC=0,0 
+C_C15         VCC VEE  1n  TC=0,0 
+V_V5         V_S13 GND_FLOAT 20Vdc
+R_R33         VCLP N5639816  1k TC=0,0 
+G_Gsourcing         VCC GND_FLOAT N5635048 GND_FLOAT 0.001
+G_G_VCCS5         GND_FLOAT VSENSE V_P0 GND_FLOAT 1e-6
+R_R27         CL__CLAMP GND_FLOAT  1k TC=0,0 
+X_U20         VEE_CLP OUT N5635830 GND_FLOAT VCVS_LIMIT PARAMS:  GAIN=100
++  VPOS=6000 VNEG=-6000
+X_U_Rinn         GND_FLOAT N5635138 R_NOISELESS PARAMS:  ROHMS=1e6
+R_R35         VCLP N5637598  0.1 TC=0,0 
+C_C23         GND_FLOAT VCLP  10p  TC=0,0 
+C_Ccc         V_P0 GND_FLOAT  12n  TC=0,0 
+C_CinnCM         GND_FLOAT N5635138  600f  TC=0,0 
+.ENDS LME49721
+*$
+.subckt LME49721_S1 1 2 3 4  
+S_S1         3 4 1 2 _S1
+RS_S1         1 2 1G
+.MODEL         _S1 VSWITCH Roff=100e6 Ron=1 Voff=-10V Von=10V
+.ends LME49721_S1
+*$
+.subckt LME49721_H1 1 2 3 4  
+H_H1         3 4 VH_H1 1000
+VH_H1         1 2 0V
+.ends LME49721_H1
+*$
+.subckt LME49721_S8 1 2 3 4  
+S_S8         3 4 1 2 _S8
+RS_S8         1 2 1G
+.MODEL         _S8 VSWITCH Roff=1e6 Ron=1.0 Voff=0.0V Von=0.010V
+.ends LME49721_S8
+*$
+.subckt LME49721_S3 1 2 3 4  
+S_S3         3 4 1 2 _S3
+RS_S3         1 2 1G
+.MODEL         _S3 VSWITCH Roff=100e6 Ron=1.0 Voff=-1V Von=1V
+.ends LME49721_S3
+*$
+.subckt LME49721_S12 1 2 3 4  
+S_S12         3 4 1 2 _S12
+RS_S12         1 2 1G
+.MODEL         _S12 VSWITCH Roff=1e6 Ron=10 Voff=-0.1V Von=0.1V
+.ends LME49721_S12
+*$
+.subckt LME49721_S11 1 2 3 4  
+S_S11         3 4 1 2 _S11
+RS_S11         1 2 1G
+.MODEL         _S11 VSWITCH Roff=1e6 Ron=10 Voff=-0.1V Von=0.1V
+.ends LME49721_S11
+*$
+.subckt LME49721_S6 1 2 3 4  
+S_S6         3 4 1 2 _S6
+RS_S6         1 2 1G
+.MODEL         _S6 VSWITCH Roff=100e6 Ron=1 Voff=-10V Von=10V
+.ends LME49721_S6
+*$
+.subckt LME49721_S7 1 2 3 4  
+S_S7         3 4 1 2 _S7
+RS_S7         1 2 1G
+.MODEL         _S7 VSWITCH Roff=1e6 Ron=1.0 Voff=0.0V Von=-0.010V
+.ends LME49721_S7
+*$
+.subckt LME49721_S4 1 2 3 4  
+S_S4         3 4 1 2 _S4
+RS_S4         1 2 1G
+.MODEL         _S4 VSWITCH Roff=100e6 Ron=1.0 Voff=-1V Von=1V
+.ends LME49721_S4
+*$
+.subckt LME49721_S10 1 2 3 4  
+S_S10         3 4 1 2 _S10
+RS_S10         1 2 1G
+.MODEL         _S10 VSWITCH Roff=100e6 Ron=1.0 Voff=0.0V Von=150V
+.ends LME49721_S10
+*$
+.subckt LME49721_S5 1 2 3 4  
+S_S5         3 4 1 2 _S5
+RS_S5         1 2 1G
+.MODEL         _S5 VSWITCH Roff=100e6 Ron=1 Voff=-10V Von=10V
+.ends LME49721_S5
+*$
+.subckt LME49721_S2 1 2 3 4  
+S_S2         3 4 1 2 _S2
+RS_S2         1 2 1G
+.MODEL         _S2 VSWITCH Roff=100e6 Ron=1 Voff=-10V Von=10V
+.ends LME49721_S2
+*$
+.subckt LME49721_S9 1 2 3 4  
+S_S9         3 4 1 2 _S9
+RS_S9         1 2 1G
+.MODEL         _S9 VSWITCH Roff=100e6 Ron=1.0 Voff=0.0V Von=150V
+.ends LME49721_S9
+*$
+** Wrapper definitions for AA legacy support **
+.subckt inoise 1 2
+.param nlff=44
+.param flwf=10
+.param nvrf=4
+.param glff={pwr(flwf,0.25)*nlff/1164}
+.param rnvf={1.184*pwr(nvrf,2)}
+.model dvnf D KF={PWR(FLWF,0.5)/1E11} IS=1.0E-16
+I1 0 7 10E-3
+I2 0 8 10E-3
+D1 7 0 DVNF
+D2 8 0 DVNF
+E1 3 6 7 8 {GLFF}
+R1 3 0 1E9
+R2 3 0 1E9
+R3 3 6 1E9
+E2 6 4 5 0 10
+R4 5 0 {RNVF}
+R5 5 0 {RNVF}
+R6 3 4 1E9
+R7 4 0 1E9
+G1 1 2 3 4 1E-6
+C1 1 0 1E-15
+C2 2 0 1E-15
+C3 1 2 1E-15
+.ends inoise
+*$
+.subckt vnoise 1 2
+.param nlf=43
+.param flw=10
+.param nvr=4
+.param glf={pwr(flw,0.25)*nlf/1164}
+.param rnv={1.184*pwr(nvr,2)}
+.model dvn D KF={PWR(FLW,0.5)/1E11} IS=1.0E-16
+I1 0 7 10E-3
+I2 0 8 10E-3
+D1 7 0 DVN
+D2 8 0 DVN
+E1 3 6 7 8 {GLF}
+R1 3 0 1E9
+R2 3 0 1E9
+R3 3 6 1E9
+E2 6 4 5 0 10
+R4 5 0 {RNV}
+R5 5 0 {RNV}
+R6 3 4 1E9
+R7 4 0 1E9
+E3 1 2 3 4 1
+C1 1 0 1E-15
+C2 2 0 1E-15
+C3 1 2 1E-15
+.ends vnoise
+*$
+.subckt diode_ideal a c
+d1 a c dnom
+.model dnom d
++ tt=1e-011
++ cjo=1e-018
++ is=1e-015
++ rs=0.001
+.ends diode_ideal
+*$
+*ROHMS = VALUE IN OHMS OF NOISELESS RESISTOR
+.SUBCKT R_NOISELESS  1 2 PARAMS: ROHMS=1E6
+ERES 1 3 VALUE = {I(VSENSE)*{ROHMS}}
+RDUMMY 30 3 1
+VSENSE 30 2 DC 0V
+.ENDS R_NOISELESS 
+*$
+.SUBCKT VCCS_LIMIT  VIN+ VIN- IOUT+ IOUT- PARAMS: GAIN=100e-6 IPOS=.5 INEG=-.5
+G1 IOUT+ IOUT- VALUE={LIMIT({GAIN}*V(VIN+,VIN-),{IPOS},{INEG})}
+.ENDS VCCS_LIMIT 
+*$
+.SUBCKT VCVS_LIMIT VIN+ VIN- VOUT+ VOUT- PARAMS: GAIN=10e0 VPOS=2 VNEG=0
+E1 VOUT+ VOUT- VALUE={LIMIT({GAIN}*V(VIN+,VIN-),{VPOS},{VNEG})}
+.ENDS VCVS_LIMIT
+*$
