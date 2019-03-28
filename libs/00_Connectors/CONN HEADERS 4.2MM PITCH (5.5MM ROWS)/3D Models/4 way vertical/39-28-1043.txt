@@ -1,0 +1,13 @@
+﻿"Symbol";"Value";"Unit";
+"TraceParts.PartNumber";"10-06072016-108005";"";
+"REFERENCE";"39-28-1043";"";
+"TraceParts.PartTitle";"4 way vertical PCB header,Mini-Fit Jr";"";
+"TraceParts.InstanceId";"10-06072016-108005C3UOJ33YHNH890DM4WYFOB90N";"";
+"DESIGN";"4 way vertical PCB header,Mini-Fit Jr";"";
+"TraceParts.PartStatus";"Published";"";
+"TraceParts.PartStatusId";"";"";
+"SUPPLIER";"molex";"";
+"TraceParts.PartVersion";"1.0.0";"";
+"TRACEPARTS";"TRACEPARTS";"";
+"TraceParts.PartLanguage";"en";"";
+"TraceParts.ClassPath";"MOLEX:/TRACEPARTS/TP10/TP10011/TP10011004/10-06072016-108005";"";

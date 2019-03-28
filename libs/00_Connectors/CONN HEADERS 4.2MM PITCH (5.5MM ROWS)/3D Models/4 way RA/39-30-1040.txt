@@ -1,0 +1,13 @@
+﻿"Symbol";"Value";"Unit";
+"TraceParts.PartNumber";"10-06072016-108262";"";
+"REFERENCE";"39-30-1040";"";
+"TraceParts.PartTitle";"4 way r/a PCB header w/peg,Mini-Fit Jr";"";
+"TraceParts.InstanceId";"10-06072016-1082625I32PU2RQ7HLNJBDTM4QDINCZ";"";
+"DESIGN";"4 way r/a PCB header w/peg,Mini-Fit Jr";"";
+"TraceParts.PartStatus";"Published";"";
+"TraceParts.PartStatusId";"";"";
+"SUPPLIER";"molex";"";
+"TraceParts.PartVersion";"1.0.0";"";
+"TRACEPARTS";"TRACEPARTS";"";
+"TraceParts.PartLanguage";"en";"";
+"TraceParts.ClassPath";"MOLEX:/TRACEPARTS/TP10/TP10011/TP10011004/10-06072016-108262";"";
