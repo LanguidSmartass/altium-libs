@@ -1,0 +1,20 @@
+PCAD Importer Log
+Project : ZX62D-B-5P8.LibPkg
+
+Section : D:\Projects\LanguidSmartass.github\altium-libs\libs\00_Connectors\USB connectors\ZX62D-B-5P8\ZX62D-B-5P8.lia
+    Section : PCB Library - ZX62D-B-5P8.PcbLib
+        Section : Load Messages
+        EndSection
+
+        Section : Import Messages
+        EndSection
+    EndSection
+
+    Section : SCH Library - ZX62D-B-5P8.SchLib
+        Section : Parsing Messages
+        EndSection
+
+        Section : Generating SCH Library - ZX62D-B-5P8.SchLib
+        EndSection
+    EndSection
+EndSection
